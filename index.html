@@ -4,10 +4,7 @@
     <title>Weather DashBoard</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link
@@ -21,29 +18,24 @@
   <body>
     <header>
       <div class="card">
-        <h1 class="row bg-dark text-light justify-content-center">
-          Weather Dashboard
-        </h1>
-        <div class="card-body">
-          <form id="city-form" class="mb-3">
-            <label class="form-label"><h2>City</h2></label>
-            <input id="city-input" class="form-control" type="text" />
+        <h1 class="row bg-dark text-light justify-content-center">Weather Dashboard</h1>
+        <div class="card-body justify-content-center">
+          <form id="city-form" class="mb-3 justify-content-center">
+            <input id="city-input" class="form-control justify-content-center" type="text" />
             <small id="helpId" class="form-text text-muted"
               >Format: "Salt Lake City, Utah", "London, England"
             </small>
           </form>
+          <h3 id="city-name" class="row justify-content-center"></h3>
           <section id="weather-display" class="row justify-content-center">
-            <h3 class="mb-3">
-              "City Name"<span id="weather-icon">"Icon"</span>
-            </h3>
             <div class="col-lg-2 col-md-2 col-sm-12">
               <div class="card">
                 <h5 class="card-header">Today</h5>
                 <div class="card-body">
-                  <p id="today-temp">Temp</p>
-                  <p id="today-conditions">Conditions</p>
-                  <p id="today-wind">Wind Speed</p>
-                  <p id="today-humidity">Humidity</p>
+                  <p>Temp: <span id="today+0-temp"></span>°F</p>
+                  <p>Conditions: <span id="today+0-conditions"></span></p>
+                  <p>Wind Speed: <span id="today+0-wind"></span></p>
+                  <p>Humidity: <span id="today+0-humidity"></span>%</p>
                 </div>
               </div>
             </div>
@@ -51,49 +43,52 @@
               <div class="card">
                 <h5 class="card-header">Tomorrow</h5>
                 <div class="card-body">
-                  <p id="today+1-temp">Temp</p>
-                  <p id="today+1-conditions">Conditions</p>
-                  <p id="today+1-wind">Wind Speed</p>
-                  <p id="today+1-humidity">Humidity</p>
+                  <p>Temp: <span id="today+1-temp"></span>°F</p>
+                  <p>Conditions: <span id="today+1-conditions"></span></p>
+                  <p>Wind Speed: <span id="today+1-wind"></span></p>
+                  <p>Humidity: <span id="today+1-humidity"></span>%</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-12">
               <div class="card">
-                <h5 class="card-header">Couple Days</h5>
+                <h5 class="card-header">In 2 Days</h5>
                 <div class="card-body">
-                  <p id="today+2-temp">Temp</p>
-                  <p id="today+2-conditions">Conditions</p>
-                  <p id="today+2-wind">Wind Speed</p>
-                  <p id="today+2-humidity">Humidity</p>
+                  <p>Temp: <span id="today+2-temp"></span>°F</p>
+                  <p>Conditions: <span id="today+2-conditions"></span></p>
+                  <p>Wind Speed: <span id="today+2-wind"></span></p>
+                  <p>Humidity: <span id="today+2-humidity"></span>%</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-12">
               <div class="card">
-                <h5 class="card-header">Few Days</h5>
+                <h5 class="card-header">In 3 Days</h5>
                 <div class="card-body">
-                  <p id="today+3-temp">Temp</p>
-                  <p id="today+3-conditions">Conditions</p>
-                  <p id="today+3-wind">Wind Speed</p>
-                  <p id="today+3-humidity">Humidity</p>
+                  <p>Temp: <span id="today+3-temp"></span>°F</p>
+                  <p>Conditions: <span id="today+3-conditions"></span></p>
+                  <p>Wind Speed: <span id="today+3-wind"></span></p>
+                  <p>Humidity: <span id="today+3-humidity"></span>%</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-12">
               <div class="card">
-                <h5 class="card-header">Later This Week</h5>
+                <h5 class="card-header">In 4 Days</h5>
                 <div class="card-body">
-                  <p id="today+4-temp">Temp</p>
-                  <p id="today+4-conditions">Conditions</p>
-                  <p id="today+4-wind">Wind Speed</p>
-                  <p id="today+4-humidity">Humidity</p>
+                  <p>Temp: <span id="today+4-temp"></span>°F</p>
+                  <p>Conditions: <span id="today+4-conditions"></span></p>
+                  <p>Wind Speed: <span id="today+4-wind"></span></p>
+                  <p>Humidity: <span id="today+4-humidity"></span>%</p>
                 </div>
               </div>
             </div>
           </section>
         </div>
-        <h4 class="card-footer">History</h4>
+        <h4 class="card-footer">
+          History
+          <button id="clear-button" class="btn btn-secondary">Clear</button>
+        </h4>
         <ul id="city-history" class="list-group text-muted"></ul>
       </div>
     </header>
