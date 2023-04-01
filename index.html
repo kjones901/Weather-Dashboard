@@ -29,15 +29,72 @@
             <label class="form-label"><h2>City</h2></label>
             <input id="city-input" class="form-control" type="text" />
             <small id="helpId" class="form-text text-muted"
-              >Example: "Salt Lake City, Utah", "London, England"
+              >Format: "Salt Lake City, Utah", "London, England"
             </small>
           </form>
-          <h3 id="weather-display" class="mb-3"></h3>
+          <section id="weather-display" class="row justify-content-center">
+            <h3 class="mb-3">
+              "City Name"<span id="weather-icon">"Icon"</span>
+            </h3>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+              <div class="card">
+                <h5 class="card-header">Today</h5>
+                <div class="card-body">
+                  <p id="today-temp">Temp</p>
+                  <p id="today-conditions">Conditions</p>
+                  <p id="today-wind">Wind Speed</p>
+                  <p id="today-humidity">Humidity</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+              <div class="card">
+                <h5 class="card-header">Tomorrow</h5>
+                <div class="card-body">
+                  <p id="today+1-temp">Temp</p>
+                  <p id="today+1-conditions">Conditions</p>
+                  <p id="today+1-wind">Wind Speed</p>
+                  <p id="today+1-humidity">Humidity</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+              <div class="card">
+                <h5 class="card-header">Couple Days</h5>
+                <div class="card-body">
+                  <p id="today+2-temp">Temp</p>
+                  <p id="today+2-conditions">Conditions</p>
+                  <p id="today+2-wind">Wind Speed</p>
+                  <p id="today+2-humidity">Humidity</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+              <div class="card">
+                <h5 class="card-header">Few Days</h5>
+                <div class="card-body">
+                  <p id="today+3-temp">Temp</p>
+                  <p id="today+3-conditions">Conditions</p>
+                  <p id="today+3-wind">Wind Speed</p>
+                  <p id="today+3-humidity">Humidity</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
+              <div class="card">
+                <h5 class="card-header">Later This Week</h5>
+                <div class="card-body">
+                  <p id="today+4-temp">Temp</p>
+                  <p id="today+4-conditions">Conditions</p>
+                  <p id="today+4-wind">Wind Speed</p>
+                  <p id="today+4-humidity">Humidity</p>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-        <h4 class="card-footer text-muted">History</h4>
-        <ul id="city-history" class="list-group text-muted">
-          <li class="list-group-item text-muted">Item</li>
-        </ul>
+        <h4 class="card-footer">History</h4>
+        <ul id="city-history" class="list-group text-muted"></ul>
       </div>
     </header>
     <main></main>

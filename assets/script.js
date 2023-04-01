@@ -17,13 +17,18 @@ function getLatLon() {
       return response.json();
     })
     .then(function (data) {
-      var lat = data[0].lat;
-      var lon = data[0].lon;
-      storeCityData(lat, lon);
+      var city = {
+        name: data[0].name,
+        lat: data[0].lat,
+        lon: data[0].lon,
+      };
+      getWeather(city.lat, city.lon);
+      saveCityData(city);
+      createHistoryButton(city);
     });
 }
 
-function storeCityData(lat, lon) {
+function getWeather(lat, lon) {
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?lat=" +
       lat +
@@ -35,19 +40,46 @@ function storeCityData(lat, lon) {
       return response.json();
     })
     .then(function (data) {
-      var cityData = JSON.parse(localStorage.getItem("cityData")) || [];
-
-      var newCityData = {
-        name: data.city.name,
-        temp: data.list[0].main.temp,
-        humidity: data.list[0].main.humidity,
-        weather: data.list[0].weather[0].main,
-        windSpeed: data.list[0].wind.speed,
-      };
-
-      cityData.push(newCityData);
-      localStorage.setItem("cityData", JSON.stringify(cityData));
       console.log(data);
-      console.log(cityData);
+      for (var i = 0; i < 40; i += 8) {
+        console.log(i, data.list[i]);
+      }
     });
 }
+
+function saveCityData(city) {
+  var cityData = JSON.parse(localStorage.getItem("cityData")) || [];
+
+  cityData.push(city);
+
+  localStorage.setItem("cityData", JSON.stringify(cityData));
+}
+
+function createHistoryButton(city) {
+  var historyButton = document.createElement("li");
+  historyButton.classList.add("history-button");
+  historyButton.textContent = city.name;
+  historyButton.id = "button-" + city.name;
+  historyButton.style.cursor = "pointer";
+  historyButton.style.color = "darkgreen";
+  historyButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    var buttonId = historyButton.id;
+    getHistory();
+    console.log(buttonId);
+  });
+  document.getElementById("city-history").appendChild(historyButton);
+}
+
+function loadFromLocalStorage() {
+  var cityData = JSON.parse(localStorage.getItem("cityData")) || [];
+  for (let i = 0; i < cityData.length; i++) {
+    createHistoryButton(cityData[i]);
+  }
+}
+
+function getHistory() {
+  console.log("clicky");
+}
+
+loadFromLocalStorage();
