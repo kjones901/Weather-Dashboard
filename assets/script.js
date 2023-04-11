@@ -10,6 +10,7 @@ cityForm.addEventListener("submit", function (event) {
   getLatLon();
 });
 
+//trying to get the http to update to https on deployed website. It's up to date on git hub but isn't updated on the deployed.
 //this takes the user inputed city name and fetchs the latitude and longitude.
 //it creates a variable called city that logs the name,lat,&lon that is used as parameters in future functions.
 function getLatLon() {
