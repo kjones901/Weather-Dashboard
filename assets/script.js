@@ -14,7 +14,7 @@ cityForm.addEventListener("submit", function (event) {
 //it creates a variable called city that logs the name,lat,&lon that is used as parameters in future functions.
 function getLatLon() {
   fetch(
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
       cityInput +
       "&limit=1&appid=fe875364d73fc24b0907b9330ffdd475&units=imperial"
   )
